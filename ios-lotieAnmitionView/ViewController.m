@@ -90,7 +90,16 @@ static NSString * const anmitionCollectionViewCellID = @"anmitionCollectionViewC
         indexPath = [self.collectionView indexPathForItemAtPoint:targetCenter];
         i++;
     }
-//    [self willChangeToIndex:indexPath.row];
+
+}
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    //ScrollView中根据滚动距离来判断当前页数
+    
+    int page = (int)scrollView.contentOffset.x/kscreenw+0.5;
+
+    NSLog(@"%d",page);
 }
 
 
@@ -98,14 +107,7 @@ static NSString * const anmitionCollectionViewCellID = @"anmitionCollectionViewC
 
 
 
-- (anmitionCollectionViewCell *)getCurrentCell{
-    if (!_cell) {
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_currentHighlightedIndex
-                                                    inSection:0];
-        _cell = (anmitionCollectionViewCell *)[_collectionView cellForItemAtIndexPath:indexPath];
-    }
-    return _cell;
-}
+
 
 
 

@@ -7,12 +7,12 @@
 //
 
 #import "anmitionCollectionViewCell.h"
-#import <Lottie/Lottie.h>
+
 
 @interface anmitionCollectionViewCell ()
 
 @property(nonatomic,strong) UIImageView  *backImageView;
-@property(nonatomic,strong) LOTAnimationView  *animationView;
+
 
 @property(nonatomic,strong) UILabel *tipLabel;
 @property(nonatomic,strong) UISwitch  *anmitionSwitch;
@@ -111,9 +111,7 @@
     }
 }
 
--(void)startAnmition {
-    [_animationView play];
-}
+
 
 -(void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
