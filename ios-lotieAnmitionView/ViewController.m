@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "Lottie.h"
+#import <Lottie/Lottie.h>
 @interface ViewController ()
 
 @end
