@@ -17,7 +17,10 @@
 
 static NSString * const anmitionCollectionViewCellID = @"anmitionCollectionViewCellID";
 
-@interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource> {
+    NSInteger _currentHighlightedIndex; //当前点亮的cell下标
+    NSInteger _scrollEndIndex;          //最后一次滚动结束时的cell下标
+}
 
 @property(nonatomic,strong) UICollectionView  *collectionView;
 @property(nonatomic,strong) MyPullulationCollectionViewLayout *layout;
@@ -28,6 +31,16 @@ static NSString * const anmitionCollectionViewCellID = @"anmitionCollectionViewC
 @end
 
 @implementation ViewController
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+   
+    
+}
+
+//-(void)anmition:(NSNotification *)notice {
+//    [self.cell startAnmition];
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -50,7 +63,7 @@ static NSString * const anmitionCollectionViewCellID = @"anmitionCollectionViewC
 
     [self.view addSubview:self.collectionView];
     self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast;
-    self.collectionView.backgroundColor = [UIColor brownColor];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return 7;
@@ -62,6 +75,7 @@ static NSString * const anmitionCollectionViewCellID = @"anmitionCollectionViewC
     [collectionView registerClass:[anmitionCollectionViewCell class] forCellWithReuseIdentifier:identifier];
     
     anmitionCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    _cell = cell;
     cell.index = indexPath.row + 1;
     return cell;
 }
@@ -79,6 +93,19 @@ static NSString * const anmitionCollectionViewCellID = @"anmitionCollectionViewC
 //    [self willChangeToIndex:indexPath.row];
 }
 
+
+
+
+
+
+- (anmitionCollectionViewCell *)getCurrentCell{
+    if (!_cell) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_currentHighlightedIndex
+                                                    inSection:0];
+        _cell = (anmitionCollectionViewCell *)[_collectionView cellForItemAtIndexPath:indexPath];
+    }
+    return _cell;
+}
 
 
 

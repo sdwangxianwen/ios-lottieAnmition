@@ -10,4 +10,6 @@
 
 @interface anmitionCollectionViewCell : UICollectionViewCell
 @property(nonatomic,assign) NSInteger index;
+
+-(void)startAnmition;
 @end

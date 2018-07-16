@@ -25,7 +25,10 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor whiteColor];
+        
+         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(anmition:) name:@"anmition" object:nil];
+        
+        self.backgroundColor = [UIColor clearColor];
         [self backImageView];
         
         [self tipLabel];
@@ -35,9 +38,17 @@
 }
 
 
+-(void)anmition:(NSNotification *)notice {
+    if (self.anmitionSwitch.isOn) {
+        [_animationView play];
+    }
+    
+}
+
+
 -(UIImageView *)backImageView {
     if (!_backImageView) {
-        _backImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height - 200)];
+        _backImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 44, self.bounds.size.width, self.bounds.size.height - 200)];
         _backImageView.backgroundColor =  [UIColor colorWithRed:(arc4random() % 256)/255.0 green:(arc4random() % 256)/255.0 blue:(arc4random() % 256)/255.0 alpha:1];
         [self.contentView addSubview:_backImageView];
     }
@@ -50,6 +61,8 @@
         NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
         _animationView = [LOTAnimationView animationNamed:@"data" inBundle:bundle];
         
+    
+        _animationView.autoReverseAnimation = YES;
         _animationView.frame = _backImageView.frame;
         _animationView.animationSpeed = 1.2;
         _animationView.cacheEnable = NO;
@@ -93,5 +106,11 @@
     }
 }
 
+-(void)startAnmition {
+    [_animationView play];
+}
 
+-(void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 @end
