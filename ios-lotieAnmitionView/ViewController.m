@@ -8,7 +8,19 @@
 
 #import "ViewController.h"
 #import <Lottie/Lottie.h>
-@interface ViewController ()
+
+#import "MyPullulationCollectionViewLayout.h"
+#import "anmitionCollectionViewCell.h"
+
+#define kscreenw [UIScreen mainScreen].bounds.size.width
+#define kscreenh [UIScreen mainScreen].bounds.size.height
+
+static NSString * const anmitionCollectionViewCellID = @"anmitionCollectionViewCellID";
+
+@interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+
+@property(nonatomic,strong) UICollectionView  *collectionView;
+@property(nonatomic,strong) MyPullulationCollectionViewLayout *layout;
 
 @end
 
@@ -16,8 +28,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
-    
+    [self initCollectionView];
+}
+
+-(void)initCollectionView {
+    self.layout = [[MyPullulationCollectionViewLayout alloc] init];
+    self.layout.itemSize = CGSizeMake(kscreenw, kscreenh);
+    self.layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kscreenw, kscreenh) collectionViewLayout:self.layout];
+    self.collectionView.pagingEnabled = YES;
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    [self.collectionView registerClass:[anmitionCollectionViewCell class] forCellWithReuseIdentifier:anmitionCollectionViewCellID];
+    [self.view addSubview:self.collectionView];
+}
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 7;
+}
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    anmitionCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:anmitionCollectionViewCellID forIndexPath:indexPath];
+    return cell;
+}
+
+
+-(void)demo {
     NSInteger rank = 3;
     CGFloat rankMargin = 0;
     CGFloat rowMargin = 0;
