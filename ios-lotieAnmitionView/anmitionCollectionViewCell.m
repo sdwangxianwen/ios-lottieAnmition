@@ -11,11 +11,11 @@
 
 @interface anmitionCollectionViewCell ()
 
-@property(nonatomic,strong) UIImageView  *backImageView;
+@property(nonatomic,strong) UIImageView  *backImageView; //背景图片
 
 
-@property(nonatomic,strong) UILabel *tipLabel;
-@property(nonatomic,strong) UISwitch  *anmitionSwitch;
+@property(nonatomic,strong) UILabel *tipLabel; //tishi
+@property(nonatomic,strong) UISwitch  *anmitionSwitch; //动画开启关闭
 
 @end
 

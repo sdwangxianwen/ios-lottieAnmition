@@ -9,15 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <Lottie/Lottie.h>
 
-//@protocol anmitionCollectionViewCellDelegate <NSObject>
-//-(void)stopAnmition; //关闭动画
-//-(void)startAnmitin; //开启动画
-//@end
+
 
 @interface anmitionCollectionViewCell : UICollectionViewCell
 @property(nonatomic,assign) NSInteger index;
 
 @property(nonatomic,strong) LOTAnimationView  *animationView;
 
--(void)startAnmition;
+
 @end

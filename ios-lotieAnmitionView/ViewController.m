@@ -71,7 +71,7 @@ static NSString * const anmitionCollectionViewCellID = @"anmitionCollectionViewC
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSString *identifier=[NSString stringWithFormat:@"%ld%ld",(long)indexPath.section,(long)indexPath.row];
+    NSString *identifier=[NSString stringWithFormat:@"anmitionviewcellID%ld%ld",(long)indexPath.section,(long)indexPath.row];
     [collectionView registerClass:[anmitionCollectionViewCell class] forCellWithReuseIdentifier:identifier];
     
     anmitionCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
@@ -81,26 +81,8 @@ static NSString * const anmitionCollectionViewCellID = @"anmitionCollectionViewC
 }
 
 
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-    _isAnimate = NO;
-    NSIndexPath *indexPath = nil;
-    NSInteger i = 0;
-    while (indexPath == nil) {
-        CGPoint targetCenter = CGPointMake(targetContentOffset->x + WIDTH + 8 * i, HEIGHT);
-        indexPath = [self.collectionView indexPathForItemAtPoint:targetCenter];
-        i++;
-    }
-
-}
 
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    //ScrollView中根据滚动距离来判断当前页数
-    
-    int page = (int)scrollView.contentOffset.x/kscreenw+0.5;
-
-    NSLog(@"%d",page);
-}
 
 
 
