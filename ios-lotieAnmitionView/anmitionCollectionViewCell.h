@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface anmitionCollectionViewCell : UICollectionViewCell
-
+@property(nonatomic,assign) NSInteger index;
 @end

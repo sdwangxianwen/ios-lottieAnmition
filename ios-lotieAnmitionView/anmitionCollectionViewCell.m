@@ -27,7 +27,7 @@
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
         [self backImageView];
-        [self animationView];
+        
         [self tipLabel];
         [self anmitionSwitch];
     }
@@ -45,7 +45,7 @@
 }
 -(LOTAnimationView *)animationView {
     if (!_animationView) {
-        NSString *string = [NSString stringWithFormat:@"image7"];
+        NSString *string = [NSString stringWithFormat:@"image%ld",self.index];
         NSString *bundlePath = [[NSBundle mainBundle] pathForResource:string ofType:@"bundle"];
         NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
         _animationView = [LOTAnimationView animationNamed:@"data" inBundle:bundle];
@@ -79,6 +79,12 @@
     }
     return _anmitionSwitch;
 }
+
+-(void)setIndex:(NSInteger)index {
+    _index = index;
+    [self animationView];
+}
+
 -(void)anmitionSwitchClick:(UISwitch *)sender {
     if (sender.isOn) {
         [_animationView play];

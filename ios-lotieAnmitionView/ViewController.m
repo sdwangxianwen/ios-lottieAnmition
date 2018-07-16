@@ -36,27 +36,33 @@ static NSString * const anmitionCollectionViewCellID = @"anmitionCollectionViewC
 
 -(void)initCollectionView {
     self.layout = [[MyPullulationCollectionViewLayout alloc] init];
-    
+    self.layout.itemSize = CGSizeMake(320, kscreenh);
     //设置内边距
-//    CGFloat dis = (kscreenw - _layout.itemSize.width) * 0.5;
-//    _layout.sectionInset = UIEdgeInsetsMake(-20, dis, 0, dis);
+    CGFloat dis = (kscreenw - _layout.itemSize.width) * 0.5;
+    _layout.sectionInset = UIEdgeInsetsMake(-20, dis, 0, dis);
     
-    self.layout.itemSize = CGSizeMake(kscreenw, kscreenh);
+    
     self.layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kscreenw, kscreenh) collectionViewLayout:self.layout];
-    self.collectionView.pagingEnabled = YES;
+
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-    [self.collectionView registerClass:[anmitionCollectionViewCell class] forCellWithReuseIdentifier:anmitionCollectionViewCellID];
+
     [self.view addSubview:self.collectionView];
     self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast;
+    self.collectionView.backgroundColor = [UIColor brownColor];
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return 7;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    anmitionCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:anmitionCollectionViewCellID forIndexPath:indexPath];
+    
+    NSString *identifier=[NSString stringWithFormat:@"%ld%ld",(long)indexPath.section,(long)indexPath.row];
+    [collectionView registerClass:[anmitionCollectionViewCell class] forCellWithReuseIdentifier:identifier];
+    
+    anmitionCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    cell.index = indexPath.row + 1;
     return cell;
 }
 
