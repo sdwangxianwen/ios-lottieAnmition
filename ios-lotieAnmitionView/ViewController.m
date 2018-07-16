@@ -32,15 +32,7 @@ static NSString * const anmitionCollectionViewCellID = @"anmitionCollectionViewC
 
 @implementation ViewController
 
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-   
-    
-}
 
-//-(void)anmition:(NSNotification *)notice {
-//    [self.cell startAnmition];
-//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
