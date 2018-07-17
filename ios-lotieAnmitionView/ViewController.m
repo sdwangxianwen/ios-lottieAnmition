@@ -12,10 +12,12 @@
 #import "MyPullulationCollectionViewLayout.h"
 #import "anmitionCollectionViewCell.h"
 
+#import "hudViewController.h"
+
 #define kscreenw [UIScreen mainScreen].bounds.size.width
 #define kscreenh [UIScreen mainScreen].bounds.size.height
 
-static NSString * const anmitionCollectionViewCellID = @"anmitionCollectionViewCellID";
+
 
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -33,8 +35,11 @@ static NSString * const anmitionCollectionViewCellID = @"anmitionCollectionViewC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self initCollectionView];
 }
+
+
 
 -(void)initCollectionView {
     self.layout = [[MyPullulationCollectionViewLayout alloc] init];
@@ -67,6 +72,8 @@ static NSString * const anmitionCollectionViewCellID = @"anmitionCollectionViewC
     cell.index = indexPath.row + 1;
     return cell;
 }
+
+
 
 
 
