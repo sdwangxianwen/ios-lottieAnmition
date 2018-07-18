@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Lottie/Lottie.h>
+@class anmitionModel;
 
 
 
@@ -15,6 +16,8 @@
 @property(nonatomic,assign) NSInteger index;
 
 @property(nonatomic,strong) LOTAnimationView  *animationView;
+@property(nonatomic,strong) UIImageView  *backImageView; //背景图片
+@property(nonatomic,strong) anmitionModel  *model;
 
 
 @end

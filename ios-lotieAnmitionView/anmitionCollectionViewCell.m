@@ -7,11 +7,12 @@
 //
 
 #import "anmitionCollectionViewCell.h"
+#import "anmitionModel.h"
 
 
 @interface anmitionCollectionViewCell ()
 
-@property(nonatomic,strong) UIImageView  *backImageView; //背景图片
+
 
 
 @property(nonatomic,strong) UILabel *tipLabel; //tishi
@@ -30,6 +31,7 @@
     if (self) {
         
          [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(anmition:) name:@"anmition" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopAnimation:) name:@"cancaleAnmition" object:nil];
         
         self.backgroundColor =  [UIColor clearColor];
         [self backImageView];
@@ -48,6 +50,9 @@
         [_animationView play];
     }
     
+}
+-(void)stopAnimition:(NSNotification *)notice {
+    [_animationView stop];
 }
 
 -(UIImageView *)backImageView {
@@ -78,8 +83,8 @@
 
 -(LOTAnimationView *)animationView {
     if (!_animationView) {
-        NSString *string = [NSString stringWithFormat:@"image%ld",self.index];
-        NSString *bundlePath = [[NSBundle mainBundle] pathForResource:string ofType:@"bundle"];
+//        NSString *string = [NSString stringWithFormat:@"image%ld",self.index];
+        NSString *bundlePath = [[NSBundle mainBundle] pathForResource:self.model.bundleName ofType:@"bundle"];
         NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
         _animationView = [LOTAnimationView animationNamed:@"data" inBundle:bundle];
         
@@ -127,12 +132,6 @@
 }
 
 
--(void)setIndex:(NSInteger)index {
-    _index = index;
-    _backImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"bg%ld",index]];
-    _titleLabel.text = [NSString stringWithFormat:@"第%ld个",index];
-    [self animationView];
-}
 
 -(void)anmitionSwitchClick:(UISwitch *)sender {
     if (sender.isOn) {
@@ -142,6 +141,18 @@
     }
 }
 
+-(void)setModel:(anmitionModel *)model {
+    _model = model;
+    if (!model.isAnmition) {
+        [self.animationView removeFromSuperview];
+        self.animationView = nil;
+        _backImageView.image = [UIImage imageNamed:model.backImage];
+    } else {
+        _backImageView.image = [UIImage imageNamed:@""];
+        [self animationView];
+        
+    }
+}
 
 
 -(void)dealloc {

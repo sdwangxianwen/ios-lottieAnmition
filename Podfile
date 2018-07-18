@@ -4,6 +4,7 @@
 target 'ios-lotieAnmitionView' do
 pod 'lottie-ios'
 pod 'MBProgressHUD'
+pod 'YYModel'
 
 target 'ios-lotieAnmitionViewTests' do
     inherit! :search_paths
