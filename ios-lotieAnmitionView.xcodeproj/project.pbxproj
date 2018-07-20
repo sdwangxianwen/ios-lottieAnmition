@@ -28,6 +28,12 @@
 		2152508120FD8C59009E829C /* hudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152508020FD8C59009E829C /* hudViewController.m */; };
 		2152508420FD8D54009E829C /* rootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152508320FD8D54009E829C /* rootViewController.m */; };
 		2152552E20FF195B009E829C /* anmitionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152552D20FF195B009E829C /* anmitionModel.m */; };
+		2152560821004009009E829C /* empty_status.json in Resources */ = {isa = PBXBuildFile; fileRef = 2152560721004009009E829C /* empty_status.json */; };
+		2152560A210043C5009E829C /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 21525609210043C5009E829C /* data.json */; };
+		215256122101C0FA009E829C /* MBProgressHUD+hud.m in Sources */ = {isa = PBXBuildFile; fileRef = 215256112101C0FA009E829C /* MBProgressHUD+hud.m */; };
+		215256172101C184009E829C /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 215256162101C183009E829C /* loading.json */; };
+		2152561D2101D217009E829C /* error.json in Resources */ = {isa = PBXBuildFile; fileRef = 2152561C2101D217009E829C /* error.json */; };
+		2152561F2101D2B9009E829C /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 2152561E2101D2B9009E829C /* success.json */; };
 		57C8429AB1950C5CFE137E97 /* libPods-ios-lotieAnmitionView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D50599A62D88FAE46FD48021 /* libPods-ios-lotieAnmitionView.a */; };
 		6C029EF0E2977087881BDE1F /* libPods-ios-lotieAnmitionViewTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E19274E347E1B803B7F08E /* libPods-ios-lotieAnmitionViewTests.a */; };
 		8F20C9C78229446E0002F020 /* libPods-ios-lotieAnmitionViewUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DB491613267E6E27130ED3 /* libPods-ios-lotieAnmitionViewUITests.a */; };
@@ -85,6 +91,13 @@
 		2152508320FD8D54009E829C /* rootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rootViewController.m; sourceTree = "<group>"; };
 		2152552C20FF195B009E829C /* anmitionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = anmitionModel.h; sourceTree = "<group>"; };
 		2152552D20FF195B009E829C /* anmitionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = anmitionModel.m; sourceTree = "<group>"; };
+		2152560721004009009E829C /* empty_status.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty_status.json; sourceTree = "<group>"; };
+		21525609210043C5009E829C /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		215256102101C0FA009E829C /* MBProgressHUD+hud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+hud.h"; sourceTree = "<group>"; };
+		215256112101C0FA009E829C /* MBProgressHUD+hud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+hud.m"; sourceTree = "<group>"; };
+		215256162101C183009E829C /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		2152561C2101D217009E829C /* error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = error.json; sourceTree = "<group>"; };
+		2152561E2101D2B9009E829C /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		22AB0A8E1916E372EC9D3A56 /* Pods-ios-lotieAnmitionViewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-lotieAnmitionViewUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-lotieAnmitionViewUITests/Pods-ios-lotieAnmitionViewUITests.release.xcconfig"; sourceTree = "<group>"; };
 		333D2656444EAD992D9F1806 /* Pods-ios-lotieAnmitionViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-lotieAnmitionViewTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-lotieAnmitionViewTests/Pods-ios-lotieAnmitionViewTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A1668B04BF7F1CD736DD8EA /* Pods-ios-lotieAnmitionViewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-lotieAnmitionViewUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-lotieAnmitionViewUITests/Pods-ios-lotieAnmitionViewUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +153,8 @@
 		1E9CCC7C20FADB3F00C1EDF8 = {
 			isa = PBXGroup;
 			children = (
+				21525609210043C5009E829C /* data.json */,
+				2152560721004009009E829C /* empty_status.json */,
 				1E9CCD8E20FADB7B00C1EDF8 /* supportFiles */,
 				1E9CCC8720FADB3F00C1EDF8 /* ios-lotieAnmitionView */,
 				1E9CCCA320FADB4000C1EDF8 /* ios-lotieAnmitionViewTests */,
@@ -163,6 +178,7 @@
 		1E9CCC8720FADB3F00C1EDF8 /* ios-lotieAnmitionView */ = {
 			isa = PBXGroup;
 			children = (
+				2152560F2101C0E2009E829C /* HUD */,
 				1E9CCC8820FADB3F00C1EDF8 /* AppDelegate.h */,
 				1E9CCC8920FADB3F00C1EDF8 /* AppDelegate.m */,
 				2152508220FD8D54009E829C /* rootViewController.h */,
@@ -225,6 +241,18 @@
 				1E9CCD9620FADB9300C1EDF8 /* image7.bundle */,
 			);
 			path = bundle;
+			sourceTree = "<group>";
+		};
+		2152560F2101C0E2009E829C /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				2152561E2101D2B9009E829C /* success.json */,
+				2152561C2101D217009E829C /* error.json */,
+				215256162101C183009E829C /* loading.json */,
+				215256102101C0FA009E829C /* MBProgressHUD+hud.h */,
+				215256112101C0FA009E829C /* MBProgressHUD+hud.m */,
+			);
+			path = HUD;
 			sourceTree = "<group>";
 		};
 		4B6EAA35D20947DDC7F3AF1D /* Frameworks */ = {
@@ -348,10 +376,15 @@
 				1E9CCC9520FADB4000C1EDF8 /* Assets.xcassets in Resources */,
 				1E9CCD9B20FADB9300C1EDF8 /* image1.bundle in Resources */,
 				1E9CCD9A20FADB9300C1EDF8 /* image3.bundle in Resources */,
+				2152561D2101D217009E829C /* error.json in Resources */,
 				1E9CCC9020FADB3F00C1EDF8 /* Main.storyboard in Resources */,
+				215256172101C184009E829C /* loading.json in Resources */,
 				1E9CCD9D20FADB9300C1EDF8 /* image7.bundle in Resources */,
+				2152560A210043C5009E829C /* data.json in Resources */,
 				1E9CCD9720FADB9300C1EDF8 /* image2.bundle in Resources */,
 				1E9CCD9820FADB9300C1EDF8 /* image4.bundle in Resources */,
+				2152561F2101D2B9009E829C /* success.json in Resources */,
+				2152560821004009009E829C /* empty_status.json in Resources */,
 				1E9CCD9920FADB9300C1EDF8 /* image6.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +474,7 @@
 				1E9CCC9B20FADB4000C1EDF8 /* main.m in Sources */,
 				2152552E20FF195B009E829C /* anmitionModel.m in Sources */,
 				2152507E20FC677F009E829C /* MyPullulationCollectionViewLayout.m in Sources */,
+				215256122101C0FA009E829C /* MBProgressHUD+hud.m in Sources */,
 				1E9CCC9320FADB3F00C1EDF8 /* ios_lotieAnmitionView.xcdatamodeld in Sources */,
 				2152508120FD8C59009E829C /* hudViewController.m in Sources */,
 			);

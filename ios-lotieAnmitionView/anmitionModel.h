@@ -12,6 +12,9 @@
 @property(nonatomic,copy) NSString *backImage;
 @property(nonatomic,assign) BOOL isAnmition;
 @property(nonatomic,copy) NSString *bundleName;
+@property(nonatomic,copy) NSString *backNormalImage;
+@property(nonatomic,strong) NSString  *bg;
+@property(nonatomic,copy) NSString *dataName;
 +(NSArray *)getata;
 
 @end

@@ -47,7 +47,10 @@
 
 -(void)anmition:(NSNotification *)notice {
     if (self.anmitionSwitch.isOn) {
+       
         [_animationView play];
+    } else {
+       
     }
     
 }
@@ -86,13 +89,13 @@
 //        NSString *string = [NSString stringWithFormat:@"image%ld",self.index];
         NSString *bundlePath = [[NSBundle mainBundle] pathForResource:self.model.bundleName ofType:@"bundle"];
         NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
-        _animationView = [LOTAnimationView animationNamed:@"data" inBundle:bundle];
+        _animationView = [LOTAnimationView animationNamed:self.model.dataName inBundle:bundle];
         
     
         _animationView.autoReverseAnimation = YES;
         _animationView.frame = _backImageView.frame;
         _animationView.animationSpeed = 1.2;
-        _animationView.cacheEnable = NO;
+        _animationView.cacheEnable = YES;
         _animationView.loopAnimation = YES;
 //        [_animationView play];
         [_backImageView addSubview:_animationView];
@@ -135,9 +138,12 @@
 
 -(void)anmitionSwitchClick:(UISwitch *)sender {
     if (sender.isOn) {
+//        [self animationView];
         [_animationView play];
+        
     } else {
         [_animationView stop];
+      
     }
 }
 
@@ -148,7 +154,7 @@
         self.animationView = nil;
         _backImageView.image = [UIImage imageNamed:model.backImage];
     } else {
-        _backImageView.image = [UIImage imageNamed:@""];
+        _backImageView.image = [UIImage imageNamed:model.bg];
         [self animationView];
         
     }

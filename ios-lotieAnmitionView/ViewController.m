@@ -72,9 +72,9 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-//    NSString *identifier=[NSString stringWithFormat:@"anmitionviewcellID%ld%ld",(long)indexPath.section,(long)indexPath.row];
-//    [collectionView registerClass:[anmitionCollectionViewCell class] forCellWithReuseIdentifier:identifier];
-    anmitionCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"anmitionCollectionViewCellID" forIndexPath:indexPath];
+    NSString *identifier=[NSString stringWithFormat:@"anmitionviewcellID%ld%ld",(long)indexPath.section,(long)indexPath.row];
+    [collectionView registerClass:[anmitionCollectionViewCell class] forCellWithReuseIdentifier:identifier];
+    anmitionCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     cell.model = self.arr[indexPath.row];
     
 
@@ -107,7 +107,7 @@
 
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [[LOTAnimationCache sharedCache] clearCache];
+//    [[LOTAnimationCache sharedCache] clearCache];
 }
 
 
