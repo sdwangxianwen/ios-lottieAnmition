@@ -34,6 +34,7 @@
 		215256172101C184009E829C /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 215256162101C183009E829C /* loading.json */; };
 		2152561D2101D217009E829C /* error.json in Resources */ = {isa = PBXBuildFile; fileRef = 2152561C2101D217009E829C /* error.json */; };
 		2152561F2101D2B9009E829C /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 2152561E2101D2B9009E829C /* success.json */; };
+		215256232101E616009E829C /* setting.json in Resources */ = {isa = PBXBuildFile; fileRef = 215256222101E616009E829C /* setting.json */; };
 		57C8429AB1950C5CFE137E97 /* libPods-ios-lotieAnmitionView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D50599A62D88FAE46FD48021 /* libPods-ios-lotieAnmitionView.a */; };
 		6C029EF0E2977087881BDE1F /* libPods-ios-lotieAnmitionViewTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E19274E347E1B803B7F08E /* libPods-ios-lotieAnmitionViewTests.a */; };
 		8F20C9C78229446E0002F020 /* libPods-ios-lotieAnmitionViewUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DB491613267E6E27130ED3 /* libPods-ios-lotieAnmitionViewUITests.a */; };
@@ -98,6 +99,7 @@
 		215256162101C183009E829C /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		2152561C2101D217009E829C /* error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = error.json; sourceTree = "<group>"; };
 		2152561E2101D2B9009E829C /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
+		215256222101E616009E829C /* setting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = setting.json; sourceTree = "<group>"; };
 		22AB0A8E1916E372EC9D3A56 /* Pods-ios-lotieAnmitionViewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-lotieAnmitionViewUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-lotieAnmitionViewUITests/Pods-ios-lotieAnmitionViewUITests.release.xcconfig"; sourceTree = "<group>"; };
 		333D2656444EAD992D9F1806 /* Pods-ios-lotieAnmitionViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-lotieAnmitionViewTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-lotieAnmitionViewTests/Pods-ios-lotieAnmitionViewTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A1668B04BF7F1CD736DD8EA /* Pods-ios-lotieAnmitionViewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-lotieAnmitionViewUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-lotieAnmitionViewUITests/Pods-ios-lotieAnmitionViewUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 		2152560F2101C0E2009E829C /* HUD */ = {
 			isa = PBXGroup;
 			children = (
+				215256222101E616009E829C /* setting.json */,
 				2152561E2101D2B9009E829C /* success.json */,
 				2152561C2101D217009E829C /* error.json */,
 				215256162101C183009E829C /* loading.json */,
@@ -374,6 +377,7 @@
 				1E9CCC9820FADB4000C1EDF8 /* LaunchScreen.storyboard in Resources */,
 				1E9CCD9C20FADB9300C1EDF8 /* image5.bundle in Resources */,
 				1E9CCC9520FADB4000C1EDF8 /* Assets.xcassets in Resources */,
+				215256232101E616009E829C /* setting.json in Resources */,
 				1E9CCD9B20FADB9300C1EDF8 /* image1.bundle in Resources */,
 				1E9CCD9A20FADB9300C1EDF8 /* image3.bundle in Resources */,
 				2152561D2101D217009E829C /* error.json in Resources */,
