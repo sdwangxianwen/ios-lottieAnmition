@@ -134,9 +134,10 @@
 -(void)demo2 {
     
     NSString *string = [NSString stringWithFormat:@"image1"];
-    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:string ofType:@"bundle"];    
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:string ofType:@"bundle"];
+    
     LOTBundle *bundle = [LOTBundle bundleWithPath:bundlePath];
-    [bundle setResourceBundle:bundle path:string];
+    [bundle setResourceBundle:bundle path:bundlePath];
     
     
     NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"];

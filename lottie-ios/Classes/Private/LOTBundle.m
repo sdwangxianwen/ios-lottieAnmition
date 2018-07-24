@@ -47,7 +47,7 @@
         return image;
     }
     if (_innerBundle) {
-        image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.bundle/%@",_dir,key]];
+        image = [UIImage imageNamed:[NSString stringWithFormat:@"%@/%@",_dir,key]];
         [_cache setObject:image forKey:key];
     }
     
