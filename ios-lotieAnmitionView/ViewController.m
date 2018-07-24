@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <Lottie/Lottie.h>
+#import "Lottie.h"
 #import "anmitionModel.h"
 #import <YYModel.h>
 #import "MyPullulationCollectionViewLayout.h"

@@ -7,7 +7,7 @@
 //
 
 #import "MBProgressHUD.h"
-#import <Lottie/Lottie.h>
+#import "Lottie.h"
 
 
 @interface HUDCustomView : UIView

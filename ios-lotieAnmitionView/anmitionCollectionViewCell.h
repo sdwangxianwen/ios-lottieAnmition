@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Lottie/Lottie.h>
+#import "Lottie.h"
 @class anmitionModel;
 
 

@@ -2,7 +2,7 @@
 # platform :ios, '9.0'
 
 target 'ios-lotieAnmitionView' do
-pod 'lottie-ios'
+#pod 'lottie-ios'
 pod 'MBProgressHUD'
 pod 'YYModel'
 

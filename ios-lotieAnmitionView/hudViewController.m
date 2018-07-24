@@ -7,11 +7,11 @@
 //
 
 #import "hudViewController.h"
-#import <Lottie/Lottie.h>
+#import "Lottie.h"
 #import "MBProgressHUD+hud.h"
 
 
-@interface hudViewController ()<UITableViewDelegate,UITableViewDataSource,CAAnimationDelegate>
+@interface hudViewController ()<UITableViewDelegate,UITableViewDataSource,CAAnimationDelegate,LOTBundleDelegate>
 
 @property(nonatomic,strong) NSArray  *dataArr;
 @property(nonatomic,strong) UITableView  *mainTableView;
@@ -31,8 +31,8 @@
     
 //    [self demo];
 //    [self demo1];
-//    [self demo2];
-    [self demo3];
+    [self demo2];
+//    [self demo3];
     
 //    self.dataArr = @[@"加载",@"失败",@"成功"];
 //
@@ -134,20 +134,21 @@
 -(void)demo2 {
     
     NSString *string = [NSString stringWithFormat:@"image1"];
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:string ofType:@"bundle"];    
+    LOTBundle *bundle = [LOTBundle bundleWithPath:bundlePath];
+    [bundle setResourceBundle:bundle path:string];
     
-    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:string ofType:@"bundle"];
-    NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
     
     NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:jsonPath];
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
     LOTAnimationView *anmView = [LOTAnimationView animationFromJSON:dict inBundle:bundle];
     self.anmView = anmView;
-    //        LOTAnimationView *anmView = [LOTAnimationView animationNamed:@"loading" inBundle:bundle];
+   
     self.anmView = anmView;
     anmView.frame = self.view.frame;
 //    anmView.animationSpeed = -1;
-    anmView.isLoading = YES;
+   
     anmView.loopAnimation = YES;
 
     [anmView play];
